@@ -21,7 +21,7 @@ export default {
                     During my internship at ICGC, in the Geological Hazards department, I contributed with my GIS knowledge—developing and repairing QGIS plugins with Python, and creating an Atlas of debris flows in Catalonia.
                     I consider myself a collaborative and hard-working professional who is always striving to improve. Outside of work, I enjoy hiking in the mountains, combining my love for nature, sport, and breathtaking landscapes.
                     If you’d like to know more, feel free to reach out via message or email—I’d be happy to connect.`,
-      url: '/img_avatar.png'
+      url: 'img_avatar.png'
     };
   }
 };

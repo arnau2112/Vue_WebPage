@@ -29,11 +29,11 @@ export default {
   data() {
     return {
      peaks: [
-        { name: 'Tsunami calculator', url: '/code1.jpg', url2: 'https://github.com/arnau2112/Visor_TFG_C-diz' },
-        { name: 'PlugIN Add Photos QGIS', url: '/code2.jpg', url2: 'https://github.com/arnau2112/Plugin-Add-Photos-QGIS' },
-        { name: 'Format Images Application', url: '/code1.jpg' , url2: 'https://github.com/arnau2112/Formatear_Imagenes_App'},
-        { name: 'Visor Tsunami', url: '/code2.jpg', url2: 'https://github.com/arnau2112/Visor_TFG_C-diz' },
-        { name: 'Calculadora Escales', url: '/code1.jpg', url2: 'https://github.com/arnau2112/Calculadora_Escales' }, 
+        { name: 'Tsunami calculator', url: 'code1.jpg', url2: 'https://github.com/arnau2112/Visor_TFG_C-diz' },
+        { name: 'PlugIN Add Photos QGIS', url: 'code2.jpg', url2: 'https://github.com/arnau2112/Plugin-Add-Photos-QGIS' },
+        { name: 'Format Images Application', url: 'code1.jpg' , url2: 'https://github.com/arnau2112/Formatear_Imagenes_App'},
+        { name: 'Visor Tsunami', url: 'code2.jpg', url2: 'https://github.com/arnau2112/Visor_TFG_C-diz' },
+        { name: 'Calculadora Escales', url: 'code1.jpg', url2: 'https://github.com/arnau2112/Calculadora_Escales' }, 
       ],
       darkMode: false,
       codi: false,

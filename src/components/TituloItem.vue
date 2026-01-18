@@ -57,7 +57,7 @@ export default {
     },
     methods: {
         openPDF() {
-            window.open('/VUE_CV.pdf', '_blank');
+            window.open('VUE_CV.pdf', '_blank');
         }
     }
 };
