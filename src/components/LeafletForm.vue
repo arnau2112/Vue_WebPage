@@ -5,7 +5,7 @@
           🔍 GeoVisor - Leaflet Map
       </h2>
     </div>
-    <div style="position: absolute; z-index:1000; bottom:20px; left:20px; background-color:white; padding:10px; border-radius: 10px;">Llegenda: 
+    <div style="position: absolute; z-index:1000; bottom:20px; left:20px; background-color:white; padding:10px; border-radius: 10px;">Legend: 
         <a>🔴 Education</a>
         <a>🟢 Work</a>
     </div>
