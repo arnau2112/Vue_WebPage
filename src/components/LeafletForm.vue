@@ -6,7 +6,7 @@
       </h2>
     </div>
     <div style="position: absolute; z-index:1000; bottom:20px; left:20px; background-color:white; padding:10px; border-radius: 10px;">Llegenda: 
-        <a>🔵 Education</a>
+        <a>🔴 Education</a>
         <a>🟢 Work</a>
     </div>
     <div id="map" style="height:100%;"></div>
@@ -39,7 +39,7 @@ onMounted(()=> {
         <div style="text-align: center;">
             <h3>UPC</h3>
             <p>EPSEB</p>
-            <img src="/public/EPSEB.jpg" alt="Italian Trulli" style="width:100%;height:100%;">
+            <img src="EPSEB.jpg" alt="Italian Trulli" style="width:100%;height:100%;">
             <a href="https://epseb.upc.edu/es" target="_blank" style="color: blue; text-decoration: underline;">Visit UPC EPSEB</a>
         </div>
     `;
@@ -47,7 +47,7 @@ onMounted(()=> {
         <div style="text-align: center;">
             <h3>High School</h3>
             <p>IES Sant Just Desvern</p>
-            <img src="/public/santjust.jpg" alt="Italian Trulli" style="width:100%;height:100%;">
+            <img src="santjust.jpg" alt="Italian Trulli" style="width:100%;height:100%;">
             <a href="https://agora.xtec.cat/iessantjust/" target="_blank" style="color: blue; text-decoration: underline;">Visit IES Sant Just Desvern</a>
         </div>
     `;
@@ -56,7 +56,7 @@ onMounted(()=> {
         <div style="text-align: center;">
             <h3>ICGC</h3>
             <p>Institu Cartogràfic de Catalunya</p>
-            <img src="/public/icgc.jpg" alt="Italian Trulli" style="width:100%;height:100%;">
+            <img src="icgc.jpg" alt="Italian Trulli" style="width:100%;height:100%;">
             <a href="https://www.icgc.cat/" target="_blank" style="color: blue; text-decoration: underline;">Visit ICGC</a>
         </div>
     `;
@@ -64,7 +64,7 @@ onMounted(()=> {
         <div style="text-align: center;">
             <h3>Infraplan</h3>
             <p>Infraplan Geospatial</p>
-            <img src="/public/infraplan.png" alt="Italian Trulli" style="width:100%;height:100%;">
+            <img src="infraplan.png" alt="Italian Trulli" style="width:100%;height:100%;">
             <a href="https://infraplan-geospatial.com/es" target="_blank" style="color: blue; text-decoration: underline;">Visit Infraplan</a>
         </div>
     `;
@@ -85,8 +85,8 @@ onMounted(()=> {
 
 
     
-    var marker1 = L.marker([41.3839, 2.1128]).addTo(initialMap.value).bindPopup(content) 
-    var marker2 = L.marker([41.3884831, 2.0748443]).addTo(initialMap.value).bindPopup(content2) 
+    var marker1 = L.marker([41.3839, 2.1128],{icon: redIcon}).addTo(initialMap.value).bindPopup(content) 
+    var marker2 = L.marker([41.3884831, 2.0748443],{icon: redIcon}).addTo(initialMap.value).bindPopup(content2) 
     var marker3 = L.marker([41.370260, 2.155711], {icon: greenIcon}).addTo(initialMap.value).bindPopup(content3) 
     var marker4 = L.marker([41.396752, 2.154645], {icon: greenIcon}).addTo(initialMap.value).bindPopup(content4)
 
