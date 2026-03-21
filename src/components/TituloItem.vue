@@ -63,7 +63,7 @@ export default {
     },
      methods: {
         openPDF() {
-            window.open('src/components/VUE_CV.pdf', '_blank');
+            window.open('VUE_CV.pdf', '_blank');
         },
         openLogin() {
             // Usa el router para navegar en lugar de window.open
