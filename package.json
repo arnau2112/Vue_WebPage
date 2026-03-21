@@ -12,11 +12,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-vue": "^2.23.1",
+    "bootstrap-vue-3": "^0.5.1",
+    "bootstrap-vue-next": "^0.44.0",
     "chart.js": "^4.5.1",
+    "jquery": "^3.7.1",
+    "leaflet": "^1.9.4",
+    "leaflet-minimap": "^3.6.1",
+    "leaflet-sidebar": "^0.2.4",
+    "leaflet-sidebar-v2": "^3.2.3",
+    "popper.js": "^1.16.1",
     "primeicons": "^7.0.0",
     "primevue": "^4.5.4",
     "vue": "^3.5.25",
-    "vue-chartjs": "^5.3.3"
+    "vue-chartjs": "^5.3.3",
+    "vue-leaflet-minimap": "^1.0.8",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.2",

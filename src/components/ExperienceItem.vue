@@ -36,7 +36,9 @@
     <div v-on:click="infraplan = !infraplan" class="content">
       <h2>November 2025 - Present</h2>
       <p>Geomatic engineer at Infraplan Geospatial</p>
-      <div class="experiencia" v-if="infraplan">• In process...</div>
+      <div class="experiencia" v-if="infraplan">• Database maintenance using PostgreSQL (PostGIS) <br>
+                          • Fixing bugs in Django and Vue <br>
+                          • Using geospatial data with QGIS, Cloud Compare or PDAL</div>
     </div>
   </div>
 </div>

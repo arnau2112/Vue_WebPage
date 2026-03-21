@@ -1,24 +1,43 @@
 
 
 <template >
-    <div style="width: 100%; height: 100%;" :class="{ dark: darkMode }">
-  <titulo-item  @toggle-background="toggleBackground" @toggle-codis="toggleCodis" @toggle-experience = "toggleExperience" @toggle-grafics="toggleGrafics"/>
-  <introduction-item/>
-  <div id="wrapper">
-    <peak-item v-if="codi"
-      v-for="(x) in peaks"
-      v-bind:peak-name="x.name"
-      v-bind:peak-url="x.url"
-      v-bind:peak-url2="x.url2"/>
-  </div> 
-  <experience-item v-if="experience"/>
-  <grafics-item v-if="grafics" />
-  <footer-item/>
-  </div>
+  <div style="width: 100%; height: 100%;" :class="{ dark: darkMode }" v-if="$route.path === '/'">
+  <titulo-item  @toggle-background="toggleBackground" @toggle-codis="toggleCodis" @toggle-experience = "toggleExperience" @toggle-grafics="toggleGrafics" @toggle-login="toggleLogin"/>
+    <introduction-item/>
+    <div id="wrapper">
+      <peak-item v-if="codi"
+        v-for="(x) in peaks"
+        v-bind:peak-name="x.name"
+        v-bind:peak-url="x.url"
+        v-bind:peak-url2="x.url2"/>
+    </div> 
+    <experience-item v-if="experience"/>
+    <grafics-item v-if="grafics" />
+    <!-- <log-form v-if="login"/> -->
+    <footer-item/>
+   </div>
+   <div v-if="$route.path !== '/' && 
+              $route.path !== '/login' && 
+              $route.path !== '/leaflet' && 
+              $route.path !== '/api_login'">
+    <error-item/>
+    <api-form v-if="$route.path === '/api_login'"/>
+    <leaflet-form v-if="$route.path === '/leaflet'"/>
+   </div>
+   
+  
+  <RouterView />
+
+  
+  
+  
+
+  
 </template>
 
 <script>
 import TituloItem from './components/TituloItem.vue';
+import { RouterLink, RouterView } from 'vue-router';
 
 
 
@@ -38,7 +57,8 @@ export default {
       darkMode: false,
       codi: false,
       experience: false,
-      grafics: false
+      grafics: false,
+      login: false
     };
   },
   methods: {
@@ -53,9 +73,12 @@ export default {
     },
     toggleGrafics() {
       this.grafics = !this.grafics;
-  }
+  },
+    toggleLogin() {
+      this.login = !this.login; }
 }
 }
+
 
 </script>
 

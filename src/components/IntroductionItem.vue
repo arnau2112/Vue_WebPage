@@ -60,6 +60,22 @@ h1 {
   transition: 0.3s;
 }
 
-
+@media (max-width: 1000px) {
+  .general {
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+  }
+  
+  .intro {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px; 
+    margin-left:-200px;
+  }
+}
 
 </style>

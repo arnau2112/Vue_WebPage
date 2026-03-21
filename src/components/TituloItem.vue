@@ -25,7 +25,9 @@
                     <a v-bind:href="url3" target="_blank" style="color: black; text-decoration: none;">⬇️ Bachelor's Thesis</a>
                 </button>
                 <button class="button2" @click="openPDF">⬇️ Download Curriculum Vitae</button>
+                <!-- <button class="button2" @click="openLogin">Contact Form</button> -->
                 <!--<button class="button2" v-on:click="codi_clicado3 = ! codi_clicado3; $emit('toggle-background'); "  v-bind:style="{ backgroundColor:codi_clicado3 ? 'aliceblue' : '#5799db' }"  >Background color</button>-->
+                <button class="button2" @click="openLeaflet">Leaflet Map</button>
             </p>
         
         
@@ -37,6 +39,9 @@
 
 
 <script>
+
+
+
 export default {
     emits: ['toggle-background','toggle-codis','toggle-experience','toggle-grafics'],
     data() {
@@ -52,15 +57,29 @@ export default {
             codi_clicado0: false,
             codi_clicado1: false,
             codi_clicado2: false,
-            codi_clicado3: false,
+            codi_clicado4: false,
+            data: null, 
         };
     },
-    methods: {
+     methods: {
         openPDF() {
-            window.open('VUE_CV.pdf', '_blank');
+            window.open('src/components/VUE_CV.pdf', '_blank');
+        },
+        openLogin() {
+            // Usa el router para navegar en lugar de window.open
+            this.$router.push('/login');
+        },
+        openLeaflet() {
+            // Usa el router para navegar en lugar de window.open
+            this.$router.push('/leaflet');
+        },
+        async fetchData() {
+            const response = await fetch('https://media.licdn.com/dms/document/media/v2/D4D1FAQG3hrhAyg1o-w/feedshare-document-pdf-analyzed/B4DZoW6PQXGsAY-/0/1761320961284?e=1772064000&v=beta&t=4lpwYyoOtk_7GmnnPP8EPyL2j6Nm_3rawdpHjW3rG94');
+            this.data = response;
         }
     }
 };
+
 </script>
 
 <style scoped>
@@ -167,7 +186,7 @@ button {
     margin-bottom: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
 
     .titulo {
         padding: 20px;
@@ -196,7 +215,7 @@ button {
     .hero-left h2 {
         font-size: 18px;
         text-align: center;
-        white-space: normal; /* permite salto de línea */
+        white-space: normal; 
     }
 
     .engineer {
