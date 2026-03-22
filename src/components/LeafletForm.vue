@@ -102,6 +102,14 @@ onMounted(()=> {
             <a href="https://infraplan-geospatial.com/es" target="_blank" style="color: blue; text-decoration: underline;">Visit Infraplan</a>
         </div>
     `;
+    const content5 = `
+        <div style="text-align: center;">
+            <h3>GesFoto</h3>
+            <p>Gestión y servicios fotogramétricos</p>
+            <img src="gesfoto.png" alt="Italian Trulli" style="max-width:70%;max-height:70%;"><br>
+            <a href="https://gesfoto.com/" target="_blank" style="color: blue; text-decoration: underline;">Visit GesFoto</a>
+        </div>
+    `;
 
     let ColorIcon =  L.Icon.extend({
     options: {
@@ -123,9 +131,11 @@ onMounted(()=> {
     var marker2 = L.marker([41.3884831, 2.0748443],{icon: redIcon}).addTo(initialMap.value).bindPopup(content2) 
     var marker3 = L.marker([41.370260, 2.155711], {icon: greenIcon}).addTo(initialMap.value).bindPopup(content3) 
     var marker4 = L.marker([41.396752, 2.154645], {icon: greenIcon}).addTo(initialMap.value).bindPopup(content4)
+    var marker5 = L.marker([41.381261, 2.144349], {icon: greenIcon}).addTo(initialMap.value).bindPopup(content5)
+
 
     var education = L.layerGroup([marker1, marker2]);
-    var work = L.layerGroup([marker3, marker4]);
+    var work = L.layerGroup([marker3, marker4, marker5]);
 
 
     var baseMaps = {
