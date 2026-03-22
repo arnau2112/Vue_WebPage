@@ -4,6 +4,7 @@
     <div class="general" >
       <div class="card">
         <a href="https://www.linkedin.com/in/arnau-sola-sig/" target="_blank">
+          <span class="tooltiptext">Linkedin Profile</span>
           <img style=" width: 200px; margin-bottom: -20px; margin-left: 250px;  " v-bind:src="url">   
         </a>     
         <p style="margin-left: 250px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); padding: 20px;"><b>Arnau Solà</b> <br><br> Geoinformation Engineer</p>
@@ -58,6 +59,23 @@ h1 {
   text-align: center; 
   margin-right: 20px; 
   transition: 0.3s;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 130px;
+  background-color: rgb(187, 173, 173);
+  color: #000000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1000;
+  margin-left: 250px;
+}
+
+.card:hover .tooltiptext {
+  visibility: visible;
 }
 
 @media (max-width: 1000px) {
