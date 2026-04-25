@@ -22,8 +22,8 @@
         </div>
     </div>
     <div class="content" >
-        <div v-for="url in (displayImages || Object.keys(imageModules))" :key="url">
-            <img v-on:click="openPDF(url)" :src="url" class="imatge">
+        <div v-for="url in (displayImages || Object.values(imageModules))" :key="url">
+            <img @click="openPDF(url)" :src="url" class="imatge">
         </div>
     </div>
 
@@ -37,8 +37,8 @@
 export default {
   data() {
     const imageModules = import.meta.glob(
-      '/public/mountain_images/*.(png|jpg|jpeg|webp|PNG|JPG)',
-      { eager: true }
+        '/src/assets/mountain_images/*.{png,jpg,jpeg,webp,PNG,JPG}',
+        { eager: true, import: 'default' }
     );
     const filterButton = false;
     const color = '#5799db';
@@ -59,7 +59,7 @@ export default {
         const urlImages = Object.keys(imageModules); 
         for(let i=0; i< urlImages.length; i++){
             console.log('Processing image URL:', urlImages[i]);
-            let station = urlImages[i].split('/')[3].split('_')[2].split('.')[0];
+            let station = urlImages[i].split('/')[4].split('_')[2].split('.')[0];
             console.log('Station:', station);
             let image = urlImages[i]
             if (!dict[station]) {
