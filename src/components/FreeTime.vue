@@ -37,7 +37,7 @@
 export default {
   data() {
     const imageModules = import.meta.glob(
-      '/public/mountain_images/*.(png|jpg|jpeg|webp|PNG|JPG)',
+      '/mountain_images/*.(png|jpg|jpeg|webp|PNG|JPG)',
       { eager: true }
     );
     const filterButton = false;
@@ -58,7 +58,7 @@ export default {
         const dict = {};
         const urlImages = Object.keys(imageModules); 
         for(let i=0; i< urlImages.length; i++){
-            let station = urlImages[i].split('/')[3].split('_')[2].split('.')[0];
+            let station = urlImages[i].split('/')[2].split('_')[2].split('.')[0];
             let image = urlImages[i]
             if (!dict[station]) {
                 dict[station] = [];
@@ -70,22 +70,22 @@ export default {
     stationFilterSummer(imageModules) {
         const dictS = this.filter(imageModules)
         this.displayImages = dictS['s'];
-        console.log('Summer images:',  this.displayImagesS);
+        console.log('Summer images:',  dictS['s']);
     },
     stationFilterWinter(imageModules) {
         const dictW = this.filter(imageModules)
         this.displayImages = dictW['w'];
-        console.log('Winter images:', this.displayImagesW);
+        console.log('Winter images:', dictW['w']);
     },
     stationFilterSpring(imageModules) {
         const dictSp = this.filter(imageModules)
         this.displayImages = dictSp['sp'];
-        console.log('Spring images:', this.displayImagesSp);
+        console.log('Spring images:', dictSp['sp']);
     },
     stationFilterAutumn(imageModules) {
         const dictA = this.filter(imageModules)
         this.displayImages = dictA['a'];
-        console.log('Autumn images:', this.displayImagesA);
+        console.log('Autumn images:', dictA['a']);
     },
     stationFilterAll() {
         this.displayImages = null;
