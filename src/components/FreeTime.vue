@@ -37,7 +37,7 @@
 export default {
   data() {
     const imageModules = import.meta.glob(
-      '/mountain_images/*.(png|jpg|jpeg|webp|PNG|JPG)',
+      '/public/mountain_images/*.(png|jpg|jpeg|webp|PNG|JPG)',
       { eager: true }
     );
     const filterButton = false;
@@ -58,7 +58,9 @@ export default {
         const dict = {};
         const urlImages = Object.keys(imageModules); 
         for(let i=0; i< urlImages.length; i++){
-            let station = urlImages[i].split('/')[2].split('_')[2].split('.')[0];
+            console.log('Processing image URL:', urlImages[i]);
+            let station = urlImages[i].split('/')[3].split('_')[2].split('.')[0];
+            console.log('Station:', station);
             let image = urlImages[i]
             if (!dict[station]) {
                 dict[station] = [];
