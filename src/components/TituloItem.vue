@@ -9,8 +9,8 @@
         </div>
         
     </div>
-    <div>
-        <button style="gap: 20px; margin-left: 20px;" v-on:click="click = !click">☰</button>
+    <div class="button_row">
+        <button   v-on:click="click = !click">☰</button>
             <p v-if="click">
                 <button v-on:click="codi_clicado0 = ! codi_clicado0; $emit('toggle-codis'); "  v-bind:style="{ backgroundColor:codi_clicado0 ? 'aliceblue' : '#5799db' }" class="button2" >Codes</button>
                 <button v-on:click="codi_clicado1 = ! codi_clicado1; $emit('toggle-experience'); "  v-bind:style="{ backgroundColor:codi_clicado1 ? 'aliceblue' : '#5799db' }" class="button2" >Experience</button>
@@ -21,16 +21,15 @@
                 <button class="button2">
                     <a v-bind:href="url2" target="_blank" style="color: black; text-decoration: none;">Vue Antiguo</a>
                 </button> -->
-                <button class="button2">
-                    <a v-bind:href="url3" target="_blank" style="color: black; text-decoration: none;">⬇️ Bachelor's Thesis</a>
-                </button>
-                <button class="button2" @click="openPDF">⬇️ Download Curriculum Vitae</button>
                 <!-- <button class="button2" @click="openLogin">Contact Form</button> -->
                 <!--<button class="button2" v-on:click="codi_clicado3 = ! codi_clicado3; $emit('toggle-background'); "  v-bind:style="{ backgroundColor:codi_clicado3 ? 'aliceblue' : '#5799db' }"  >Background color</button>-->
                 <button class="button2" @click="openLeaflet">Leaflet Map</button>
+                <button class="button2" @click="freeTime">My free time!</button>
+                <button class="button2">
+                    <a v-bind:href="url3" target="_blank" style="color: black; text-decoration: none;">Bachelor's Thesis</a>
+                </button>
+                <button class="button2" @click="openPDF">Download Curriculum Vitae</button>
             </p>
-        
-        
         </div>
         
 
@@ -72,6 +71,9 @@ export default {
         openLeaflet() {
             // Usa el router para navegar en lugar de window.open
             this.$router.push('/leaflet');
+        },
+        freeTime() {
+            this.$router.push('/free_time');
         },
         async fetchData() {
             const response = await fetch('https://media.licdn.com/dms/document/media/v2/D4D1FAQG3hrhAyg1o-w/feedshare-document-pdf-analyzed/B4DZoW6PQXGsAY-/0/1761320961284?e=1772064000&v=beta&t=4lpwYyoOtk_7GmnnPP8EPyL2j6Nm_3rawdpHjW3rG94');
@@ -170,7 +172,6 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    gap: 20px; 
     margin-right: 10px;
 }
 
@@ -184,6 +185,13 @@ button {
     color:black;
     background-color: #5799db;
     margin-bottom: 5px;
+}
+
+.button_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 1100px) {

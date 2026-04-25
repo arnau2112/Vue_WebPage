@@ -14,6 +14,7 @@ import LogForm from './components/LogForm.vue'
 import ErrorItem from './components/ErrorItem.vue'
 import ApiForm from './components/ApiForm.vue'
 import LeafletForm from './components/LeafletForm.vue'
+import FreeTime from './components/FreeTime.vue'
 
 
 
@@ -33,5 +34,6 @@ app.component('log-form', LogForm)
 app.component('error-item', ErrorItem)
 app.component('api-form', ApiForm)
 app.component('leaflet-form', LeafletForm)
+app.component('free-time', FreeTime)
 
 app.mount('#app')

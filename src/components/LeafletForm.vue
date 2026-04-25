@@ -9,28 +9,40 @@
         <a>🔴 Education</a>
         <a>🟢 Work</a>
     </div>
-    <div id="sidebar" class="leaflet-sidebar collapsed" style="height: 200px;">
+    <div id="sidebar" class="leaflet-sidebar collapsed" style="height: 400px;">
         <div class="leaflet-sidebar-tabs">
             <ul role="tablist">
                 <li><a href="#home" role="tab">🏠</a></li>
                 <li><a href="#profile" role="tab">👤</a></li>
                 <li><a href="#leyenda" role="tab">🧾</a></li>
+                <li><a href="#places" role="tab">📍</a></li>
             </ul>
         </div>
         <div class="leaflet-sidebar-content">
             <div class="leaflet-sidebar-pane" id="home">
                 <h1>Welcome to GeoVisor</h1>
-                <p>This is a simple Leaflet map integrated into a Vue.js application. I show the places where I studied and worked.</p>
+                <p>This is a simple Leaflet map integrated into a Vue.js application where I show the places I have studied and worked.</p>
             </div>
             <div class="leaflet-sidebar-pane" id="profile">
                 <h1>Leaflet</h1>
                 <p>Leaflet is a modern, lightweight open-source JavaScript library for mobile-friendly interactive maps. Version: "leaflet": "^1.9.4",
                 </p>
-            </div>
-            <div class="leaflet-sidebar-pane" id="leyenda">
+            </div>  
+            <div  class="leaflet-sidebar-pane" id="leyenda" >
                 <h1>Legend</h1>
                 <p>🔴 Education locations<br>🟢 Work locations</p>
             </div>
+
+            <div class="leaflet-sidebar-pane" id="places">
+                <h1>Places</h1>
+                <div v-for="location in fotos_locations(ubicaciones)" :key="location.Nombre" class="card">
+                    <a :href="location.Link" target="_blank" style="text-align: left;">
+                        <img class="imatge"  :src="location.Foto" alt="Location Image" style="width:100%;height:100%;">
+                        <p class="tooltiptext">{{ location.Nombre }}</p>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
     <div id="map" style="height:100%;"></div>
@@ -54,22 +66,8 @@ const initialMap = ref(null);
 
 
 let anchoPantalla = window.innerWidth;;
-console.log("Ancho de pantalla: " + anchoPantalla + "px");
 
-
-onMounted(()=> {
-    initialMap.value = L.map('map').setView([41.38879, 2.15899 ], 13);
-    var OSM = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19, 
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(initialMap.value);
-
-    var HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-        maxZoom: 19, 
-        attribution: '&copy; <a href="http://www.icgc.cat/condicions">OpenStreetMap</a>'
-    });
-
-    const content = `
+const content = `
         <div style="text-align: center;">
             <h3>UPC</h3>
             <p>EPSEB</p>
@@ -110,6 +108,48 @@ onMounted(()=> {
             <a href="https://gesfoto.com/" target="_blank" style="color: blue; text-decoration: underline;">Visit GesFoto</a>
         </div>
     `;
+    const content6 = `
+        <div style="text-align: center;">
+            <h3>Jay Peak Resort</h3>
+            <p>Mountain resort in Vermont</p>
+            <img src="jaypeakwintr.jpg" alt="Italian Trulli" style="max-width:70%;max-height:70%;"><br>
+            <a href="https://jaypeakresort.com/" target="_blank" style="color: blue; text-decoration: underline;">Visit Jay Peak Resort</a>
+        </div>
+    `;
+
+    
+    const ubicaciones = [content, content2, content3, content4, content5, content6];
+
+    function fotos_locations(ubicaciones) {
+        const src = [];
+        var json = JSON.stringify(ubicaciones);
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(json, 'text/html');
+        for (let i = 0; i < ubicaciones.length; i++) {
+            const fotos_sucias = doc.querySelectorAll('img')[i].attributes.src.value;   
+            const nom = doc.querySelectorAll('p')[i].textContent;
+            const foto = fotos_sucias.match(/[a-zA-Z0-9.]+/g).join('');
+            const link = doc.querySelectorAll('a')[i].href.split('%22')[1];
+            src.push({ Foto: foto, Nombre: nom, Link: link });
+        }
+        return src
+    };
+
+    fotos_locations(ubicaciones);
+
+onMounted(()=> {
+    initialMap.value = L.map('map').setView([41.38879, 2.15899 ], 13);
+    var OSM = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19, 
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(initialMap.value);
+
+    var HOT = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        maxZoom: 19, 
+        attribution: '&copy; <a href="http://www.icgc.cat/condicions">OpenStreetMap</a>'
+    });
+
+    
 
     let ColorIcon =  L.Icon.extend({
     options: {
@@ -132,10 +172,12 @@ onMounted(()=> {
     var marker3 = L.marker([41.370260, 2.155711], {icon: greenIcon}).addTo(initialMap.value).bindPopup(content3) 
     var marker4 = L.marker([41.396752, 2.154645], {icon: greenIcon}).addTo(initialMap.value).bindPopup(content4)
     var marker5 = L.marker([41.381261, 2.144349], {icon: greenIcon}).addTo(initialMap.value).bindPopup(content5)
+    var marker6 = L.marker([44.938067, -72.503652], {icon: greenIcon}).addTo(initialMap.value).bindPopup(content6)
+
 
 
     var education = L.layerGroup([marker1, marker2]);
-    var work = L.layerGroup([marker3, marker4, marker5]);
+    var work = L.layerGroup([marker3, marker4, marker5, marker6]);
 
 
     var baseMaps = {
@@ -150,9 +192,6 @@ onMounted(()=> {
 
     var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(initialMap.value);
 
-    // Configurar el geocoder con Nominatim - AHORA DENTRO DEL onMounted
-    // Asegurarse de que L.Control.Geocoder existe
-    
 
     var sidebar = L.control.sidebar('sidebar', {
     position: 'left'
@@ -169,14 +208,13 @@ onMounted(()=> {
 
     if (anchoPantalla > 768) {
         var geocoder = L.Control.geocoder({
-        defaultMarkGeocode: false, // Evita marcar automáticamente la ubicación
+        defaultMarkGeocode: false,
         geocoder: L.Control.Geocoder.nominatim({
-            serviceUrl: 'https://nominatim.openstreetmap.org' // URL del servicio Nominatim
+            serviceUrl: 'https://nominatim.openstreetmap.org' 
         })
     })
     .on('markgeocode', function (e) {
-        // Si la consulta al Geocoder ha funcionado y obtenido resultados
-        var bbox = e.geocode.bbox; // Obtener el BoundingBox de la ubicación encontrada
+        var bbox = e.geocode.bbox; //
         if (bbox) {
             var poly = L.polygon([
                 bbox.getSouthEast(),
@@ -184,10 +222,10 @@ onMounted(()=> {
                 bbox.getNorthWest(),
                 bbox.getSouthWest()
             ]);
-            initialMap.value.fitBounds(poly.getBounds()); // Ajustar el mapa a la ubicación encontrada
+            initialMap.value.fitBounds(poly.getBounds()); 
         }
     })
-    .addTo(initialMap.value); // Añadir el control del Geocoder a nuestro mapa
+    .addTo(initialMap.value); 
     }
     
 
@@ -212,6 +250,41 @@ onMounted(()=> {
     border-radius: 20px;
 }
 
+.card {
+    width: 50%;  
+    height: 200px;
+    margin: 0 auto;
+    margin: 0 auto; 
+    border-radius: 10px; padding: 5px; 
+    margin-bottom: 10px;
+}
+
+.imatge {
+    display: flex;           /* Añade esto */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente (opcional) */
+    margin: 0 auto; 
+    border-radius: 10px; 
+    padding: 5px; 
+    max-width: 180px;
+    max-height: 120px;
+}
+.card img:hover {
+    transform: scale(1.05);  /* Aumenta el tamaño de la imagen */
+    transition: transform 0.3s ease;  /* Transición suave */
+}
+
+.tooltiptext {
+  width: 130px;
+  background-color: rgb(187, 173, 173);
+  color: #000000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1000;
+}
+
 
 /* Pero en móvil, ocultamos el DIV completo */
 @media screen and (max-width: 768px) {
@@ -224,3 +297,5 @@ onMounted(()=> {
 }
 
 </style>
+
+

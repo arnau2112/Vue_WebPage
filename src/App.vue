@@ -19,10 +19,12 @@
    <div v-if="$route.path !== '/' && 
               $route.path !== '/login' && 
               $route.path !== '/leaflet' && 
+              $route.path !== '/free_time' &&
               $route.path !== '/api_login'">
     <error-item/>
     <api-form v-if="$route.path === '/api_login'"/>
     <leaflet-form v-if="$route.path === '/leaflet'"/>
+    <free-time v-if="$route.path === '/free_time'"/>
    </div>
    
   
@@ -48,11 +50,11 @@ export default {
   data() {
     return {
      peaks: [
-        { name: 'Tsunami calculator', url: 'code1.jpg', url2: 'https://github.com/arnau2112/Visor_TFG_C-diz' },
+        { name: 'Tsunami calculator', url: 'code1.jpg', url2: 'https://github.com/arnau2112/Caculadora_Velocidad_Tsunami_TFG' },
         { name: 'PlugIN Add Photos QGIS', url: 'code2.jpg', url2: 'https://github.com/arnau2112/Plugin-Add-Photos-QGIS' },
         { name: 'Format Images Application', url: 'code1.jpg' , url2: 'https://github.com/arnau2112/Formatear_Imagenes_App'},
         { name: 'Visor Tsunami', url: 'code2.jpg', url2: 'https://github.com/arnau2112/Visor_TFG_C-diz' },
-        { name: 'Calculadora Escales', url: 'code1.jpg', url2: 'https://github.com/arnau2112/Calculadora_Escales' }, 
+        { name: 'Vue Web Page', url: 'code1.jpg', url2: 'https://github.com/arnau2112/Vue_WebPage' }, 
       ],
       darkMode: false,
       codi: false,

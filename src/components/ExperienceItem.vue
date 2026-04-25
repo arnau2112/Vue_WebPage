@@ -169,6 +169,7 @@ body {
   background-color: antiquewhite;
   position: relative;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .content:hover {
