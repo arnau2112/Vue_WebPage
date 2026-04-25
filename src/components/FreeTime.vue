@@ -61,7 +61,9 @@ export default {
             console.log('Processing image URL:', urlImages[i]);
             let station = urlImages[i].split('/')[4].split('_')[2].split('.')[0];
             console.log('Station:', station);
-            let image = urlImages[i]
+            const newPath = urlImages[i]
+            const image = newPath.replace('/src/', '/')
+            console.log('SRC image:', image);
             if (!dict[station]) {
                 dict[station] = [];
             }
