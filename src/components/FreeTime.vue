@@ -62,7 +62,8 @@ export default {
             let station = urlImages[i].split('/')[4].split('_')[2].split('.')[0];
             console.log('Station:', station);
             const newPath = urlImages[i]
-            const image = newPath.replace('/src/', '/')
+            // Cambiar aquesta linia sense el replace per a localhost, ja que el path de les imatges és diferent en local i en producció
+            const image = newPath.replace('/src/', '/').replace('/mountain_images/', '/');
             console.log('SRC image:', image);
             if (!dict[station]) {
                 dict[station] = [];
