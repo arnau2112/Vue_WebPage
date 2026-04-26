@@ -97,4 +97,12 @@ a {
   font-size: 2.5em;
   fill: #fff;
 }
+
+/* Pero en móvil, ocultamos el DIV completo */
+@media screen and (max-width: 768px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+}
 </style>
