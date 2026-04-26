@@ -23,7 +23,7 @@
     </div>
     <div class="content" >
         <div v-for="url in (displayImages || Object.values(imageModules))" :key="url">
-            <img @click="openPDF(url)" :src="url" class="imatge">
+            <img @click="openPDF(url)" :src="url" class="imatge" >
         </div>
     </div>
 
@@ -54,22 +54,20 @@ export default {
         window.open(mountainUrl, '_blank');
     },
     filter(imageModules) {
-        console.log('Filtering images');
-        const dict = {};
-        const urlImages = Object.keys(imageModules); 
-        for(let i=0; i< urlImages.length; i++){
-            console.log('Processing image URL:', urlImages[i]);
-            let station = urlImages[i].split('_').pop().split('.')[0];
-            console.log('Station:', station);
-            const image = urlImages[i]
-            console.log('SRC image:', image);
-            if (!dict[station]) {
-                dict[station] = [];
-            }
-            dict[station].push(image);
-            }
-        return dict;
-    }, 
+    const dict = {};
+    const entries = Object.entries(imageModules); 
+    console.log('Entries:', entries);
+    for(let i = 0; i < entries.length; i++){
+        const [originalPath, resolvedUrl] = entries[i];
+        console.log('Original Path:', originalPath, 'Resolved URL:', resolvedUrl);
+        let station = originalPath.split('/')[4].split('_')[2].split('.')[0];
+        if (!dict[station]) {
+            dict[station] = [];
+        }
+        dict[station].push(resolvedUrl); // ← antes pusheabas la key, ahora el value
+    }
+    return dict;
+    },
     stationFilterSummer(imageModules) {
         const dictS = this.filter(imageModules)
         this.displayImages = dictS['s'];
