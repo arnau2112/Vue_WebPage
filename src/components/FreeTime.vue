@@ -59,11 +59,9 @@ export default {
         const urlImages = Object.keys(imageModules); 
         for(let i=0; i< urlImages.length; i++){
             console.log('Processing image URL:', urlImages[i]);
-            let station = urlImages[i].split('/')[4].split('_')[2].split('.')[0];
+            let station = urlImages[i].split('_').pop().split('.')[0];
             console.log('Station:', station);
-            const newPath = urlImages[i]
-            // Cambiar aquesta linia sense el replace per a localhost, ja que el path de les imatges és diferent en local i en producció
-            const image = newPath.replace('/src/', '/').replace('/mountain_images/', '/');
+            const image = urlImages[i]
             console.log('SRC image:', image);
             if (!dict[station]) {
                 dict[station] = [];
