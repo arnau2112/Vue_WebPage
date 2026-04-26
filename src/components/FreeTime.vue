@@ -58,13 +58,14 @@ export default {
     const entries = Object.entries(imageModules); 
     console.log('Entries:', entries);
     for(let i = 0; i < entries.length; i++){
+        console.log('Processing entry:', entries[i]);
         const [originalPath, resolvedUrl] = entries[i];
         console.log('Original Path:', originalPath, 'Resolved URL:', resolvedUrl);
         let station = originalPath.split('/')[4].split('_')[2].split('.')[0];
         if (!dict[station]) {
             dict[station] = [];
         }
-        dict[station].push(resolvedUrl); // ← antes pusheabas la key, ahora el value
+        dict[station].push(resolvedUrl);
     }
     return dict;
     },

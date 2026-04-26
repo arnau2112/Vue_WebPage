@@ -5,11 +5,7 @@
   <titulo-item  @toggle-background="toggleBackground" @toggle-codis="toggleCodis" @toggle-experience = "toggleExperience" @toggle-grafics="toggleGrafics" @toggle-login="toggleLogin"/>
     <introduction-item/>
     <div id="wrapper">
-      <peak-item v-if="codi"
-        v-for="(x) in peaks"
-        v-bind:peak-name="x.name"
-        v-bind:peak-url="x.url"
-        v-bind:peak-url2="x.url2"/>
+      <peak-item  v-if="codi"/>
     </div> 
     <experience-item v-if="experience"/>
     <grafics-item v-if="grafics" />
@@ -108,6 +104,7 @@ export default {
 .dark {
   background-color: #7c7575;
 }
+
 
 #app {
  cursor: url('/cursor.svg') 16 16, crosshair;
