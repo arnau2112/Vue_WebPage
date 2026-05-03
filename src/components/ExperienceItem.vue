@@ -1,5 +1,5 @@
 <template>
-<div style="margin-top: 5%;">
+<div style="margin-top: 3%;">
   <h1 style="text-align: center; font-family: Georgia;">Experience</h1>
     <div class="timeline">
         <div class="container right">

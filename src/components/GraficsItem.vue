@@ -1,45 +1,57 @@
 <template>
 
-<div style="margin-top: 5%;">
+<div style="margin-top: 3%;">
   <div class="centrado">
       <p>PYTHON</p>
       <div class="container">
-      <div class="skills python">100%</div>
+        <a href="https://es.python.org/">
+          <div class="skills python">100%</div>
+        </a>
       </div>
   </div>
 
   <div class="centrado">
       <p>SQL</p>
       <div class="container">
-      <div class="skills sql">100%</div>
+        <a href="https://www.postgresql.org/">
+          <div class="skills sql">100%</div>
+        </a>
       </div>
   </div>
 
   <div class="centrado">
       <p>HTML</p>
       <div class="container">
-      <div class="skills html">70%</div>
+        <a href="https://www.w3schools.com/Html/">
+          <div class="skills html">70%</div>
+        </a>
       </div>
   </div>
 
   <div class="centrado">
       <p>CSS</p>
       <div class="container">
-      <div class="skills css">70%</div>
+        <a href="https://developer.mozilla.org/es/docs/Web/CSS">
+          <div class="skills css">70%</div>
+        </a>
       </div>
     </div>
 
   <div class="centrado">
       <p>VUE</p>
       <div class="container">
-      <div class="skills vue">60%</div>
+        <a href="https://vuejs.org/">
+          <div class="skills vue">60%</div>
+        </a>
       </div>
   </div>
 
    <div class="centrado">
       <p>DJANGO</p>
       <div class="container">
-      <div class="skills django">50%</div>
+        <a href="https://www.djangoproject.com/">
+         <div class="skills django">50%</div>
+        </a>
       </div>
   </div>
 </div>
@@ -51,11 +63,19 @@
 
 <script>
 
+export default {
+      props: ['grafics']
+  }
+
 </script>
 
 <style scoped>
 
 * {box-sizing:border-box}
+
+a {
+    text-decoration: none;
+}
 
 p {
     margin-left:20px;

@@ -26,11 +26,6 @@
   
   <RouterView />
 
-  
-  
-  
-
-  
 </template>
 
 <script>
