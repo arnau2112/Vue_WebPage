@@ -236,7 +236,7 @@ onMounted(()=> {
 
 
 <style scoped>
-/* El DIV con clase "title" se muestra normalmente */
+
 .title {
     position: absolute;
     top: 10px;
@@ -275,7 +275,7 @@ onMounted(()=> {
 }
 
 .tooltiptext {
-  width: 130px;
+  width: 45%;
   background-color: rgb(187, 173, 173);
   color: #000000;
   text-align: center;

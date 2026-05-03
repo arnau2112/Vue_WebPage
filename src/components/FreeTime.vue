@@ -72,22 +72,18 @@ export default {
     stationFilterSummer(imageModules) {
         const dictS = this.filter(imageModules)
         this.displayImages = dictS['s'];
-        console.log('Summer images:',  dictS['s']);
     },
     stationFilterWinter(imageModules) {
         const dictW = this.filter(imageModules)
         this.displayImages = dictW['w'];
-        console.log('Winter images:', dictW['w']);
     },
     stationFilterSpring(imageModules) {
         const dictSp = this.filter(imageModules)
         this.displayImages = dictSp['sp'];
-        console.log('Spring images:', dictSp['sp']);
     },
     stationFilterAutumn(imageModules) {
         const dictA = this.filter(imageModules)
         this.displayImages = dictA['a'];
-        console.log('Autumn images:', dictA['a']);
     },
     stationFilterAll() {
         this.displayImages = null;
