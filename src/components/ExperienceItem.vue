@@ -1,46 +1,47 @@
 <template>
-
-<h1 style="text-align: center; font-family: Georgia;">Experience</h1>
-<div class="timeline">
-    <div class="container right">
-    <div v-on:click="jay = !jay" class="content">
-      <h2>June 2024 - September 2024</h2>
-      <p>Lifeguard at Jay Peak Resort (Vermont) through the Work and Travel 2024 program.</p>
-      <div class="experiencia" v-if="jay">• Ensured the safety of swimmers in pools and water parks<br>
-                      • Monitored activities to prevent accidents<br>
-                      • Provided first aid and emergency response when necessary<br>
-                      • Maintained cleanliness and order in aquatic facilities</div>
+<div style="margin-top: 5%;">
+  <h1 style="text-align: center; font-family: Georgia;">Experience</h1>
+    <div class="timeline">
+        <div class="container right">
+        <div v-on:click="jay = !jay" class="content">
+          <h2>June 2024 - September 2024</h2>
+          <p>Lifeguard at Jay Peak Resort (Vermont) through the Work and Travel 2024 program.</p>
+          <div class="experiencia" v-if="jay">• Ensured the safety of swimmers in pools and water parks<br>
+                          • Monitored activities to prevent accidents<br>
+                          • Provided first aid and emergency response when necessary<br>
+                          • Maintained cleanliness and order in aquatic facilities</div>
+        </div>
+      </div>
+      <div class="container left">
+        <div v-on:click="icgc = !icgc" class="content">
+          <h2>December 2024 - July 2025</h2>
+          <p>Internship at ICGC in the geological hazards</p>
+          <div class="experiencia" v-if="icgc">• Geospatial analysis using QGIS and ArcGIS Pro <br>
+                          • Development and maintenance of plugins with Python <br>
+                          • Creation of QGIS Atlas for Flow Debris mapping <br>
+                          • Management and querying of geospatial databases with PgAdmin4 (PostgreSQL / PostGIS) <br>
+                          • Use of specialized tools such as QField and Flow-R</div>
+        </div>
+      </div>
+      <div class="container right">
+        <div v-on:click="gesfoto = !gesfoto" class="content">
+          <h2>September 2024 - October 2025</h2>
+          <p>Geomatic engineer in GesFoto</p>
+          <div class="experiencia" v-if="gesfoto">• Creation of QGIS Plugins using Python <br>
+                              • Development of a web viewer using Leaflet <br>
+                              • Cartographic review using Mobile Mapping in QGIS and GNSS in the field</div>
+        </div>
+      </div>
+      <div class="container left">
+        <div v-on:click="infraplan = !infraplan" class="content">
+          <h2>November 2025 - Present</h2>
+          <p>Geomatic engineer at Infraplan Geospatial</p>
+          <div class="experiencia" v-if="infraplan">• Database maintenance using PostgreSQL (PostGIS) <br>
+                              • Fixing bugs in Django and Vue <br>
+                              • Using geospatial data with QGIS, Cloud Compare or PDAL</div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="container left">
-    <div v-on:click="icgc = !icgc" class="content">
-      <h2>December 2024 - July 2025</h2>
-      <p>Internship at ICGC in the geological hazards</p>
-      <div class="experiencia" v-if="icgc">• Geospatial analysis using QGIS and ArcGIS Pro <br>
-                       • Development and maintenance of plugins with Python <br>
-                       • Creation of QGIS Atlas for Flow Debris mapping <br>
-                       • Management and querying of geospatial databases with PgAdmin4 (PostgreSQL / PostGIS) <br>
-                       • Use of specialized tools such as QField and Flow-R</div>
-    </div>
-  </div>
-  <div class="container right">
-    <div v-on:click="gesfoto = !gesfoto" class="content">
-      <h2>September 2024 - October 2025</h2>
-      <p>Geomatic engineer in GesFoto</p>
-      <div class="experiencia" v-if="gesfoto">• Creation of QGIS Plugins using Python <br>
-                          • Development of a web viewer using Leaflet <br>
-                          • Cartographic review using Mobile Mapping in QGIS and GNSS in the field</div>
-    </div>
-  </div>
-  <div class="container left">
-    <div v-on:click="infraplan = !infraplan" class="content">
-      <h2>November 2025 - Present</h2>
-      <p>Geomatic engineer at Infraplan Geospatial</p>
-      <div class="experiencia" v-if="infraplan">• Database maintenance using PostgreSQL (PostGIS) <br>
-                          • Fixing bugs in Django and Vue <br>
-                          • Using geospatial data with QGIS, Cloud Compare or PDAL</div>
-    </div>
-  </div>
 </div>
     
 
