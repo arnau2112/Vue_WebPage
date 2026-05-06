@@ -94,6 +94,10 @@ h1 {
     margin-bottom: 20px; 
     margin-left:-200px;
   }
+
+  h1 {
+    font-size: 24px;
+  }
 }
 
 </style>

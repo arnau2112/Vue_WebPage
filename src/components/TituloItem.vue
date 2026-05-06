@@ -65,11 +65,9 @@ export default {
             window.open('VUE_CV.pdf', '_blank');
         },
         openLogin() {
-            // Usa el router para navegar en lugar de window.open
             this.$router.push('/login');
         },
         openLeaflet() {
-            // Usa el router para navegar en lugar de window.open
             this.$router.push('/leaflet');
         },
         freeTime() {
@@ -93,7 +91,7 @@ export default {
     background-repeat: no-repeat;   
     background-size: cover;         
     background-position: center;   
-    align-content: center;          /* 🔑 clave */
+    align-content: center;          
     height: 100%;
     width: 100%;
     margin-bottom: 20px; 
@@ -119,9 +117,9 @@ export default {
 
 
 .hero-left {
-    align-content: center;          /* 🔑 clave */
+    align-content: center;          
     align-items: center;
-    gap: 30px;              /* separación entre h1 y h2 */
+    gap: 30px;             
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-left: 60px;
     background-color:#102736de;
@@ -140,14 +138,14 @@ export default {
 .hero-left h2 {
     font-size: 30px;
     margin: 0;
-    white-space: nowrap;    /* evita salto de línea */
+    white-space: nowrap;    
     color:whitesmoke;
 }
 
-/* CONTENEDOR DERECHO */
+
 .hero-right {
     text-align: justify;
-    align-content: center;          /* 🔑 clave */  
+    align-content: center;         
     max-width: 1000px;
     font-size: 25px;
     line-height: 1.5;
@@ -204,26 +202,32 @@ button {
     .quote {
         margin: 0;
         margin-bottom: 20px;
-        font-size: 20px;
+        font-size: 15px;
         padding: 15px;
         text-align: center;
+        max-width: 90%;
+        box-sizing: border-box;
     }
 
     .hero-left {
         margin: 0;
         padding: 20px;
-        width: 100%;
+        width: 90%;
+        max-width: 90%;
+        box-sizing: border-box;
     }
 
     .hero-left h1 {
         font-size: 32px;
         text-align: center;
+        margin-left: 0 !important;
     }
 
     .hero-left h2 {
         font-size: 18px;
         text-align: center;
-        white-space: normal; 
+        white-space: normal;
+        margin-left: 0 !important;
     }
 
     .engineer {
