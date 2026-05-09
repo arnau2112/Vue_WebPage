@@ -1,6 +1,6 @@
 <template>
-
 <div style="margin-top: 3%;">
+<h1 style="text-align: center; font-family: Georgia;">Codes</h1>
   <div class="centrado">
       <p>PYTHON</p>
       <div class="container">
