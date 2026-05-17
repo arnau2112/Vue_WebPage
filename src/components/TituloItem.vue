@@ -115,7 +115,6 @@ export default {
 }
 
 
-
 .hero-left {
     align-content: center;          
     align-items: center;
@@ -195,8 +194,9 @@ button {
 @media (max-width: 1100px) {
 
     .titulo {
-        padding: 20px;
+        padding: 10%;
         height: auto;
+        max-width:80%;
     }
 
     .quote {
