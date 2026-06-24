@@ -7,7 +7,7 @@
         <header>
             <h1>Outdoors Photos</h1>
             <div >
-                <p>Outdoors photos made by me. You can also follow me on instagram: @outdoors_suli</p>
+                <p>Outdoors photos made by me around Catalonia, the Pyrenees and other natural areas </p>
              </div>
         </header>
     </div>

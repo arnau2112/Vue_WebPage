@@ -11,6 +11,26 @@
       </div>
       <p class="intro">{{ introduccion }}</p>
     </div>
+    <div class="contenedor-padre">
+      <div class="caja-1">
+        <b>ICGC</b><br><br>
+                          I have had the opportunity to work with Arnau over the past few months during his collaboration with the Institut Cartogràfic i Geològic de Catalunya, 
+                          and his performance has been excellent. I am very pleased with his attitude and commitment. He is a highly talented professional with a great capacity for learning.
+                          He has solid knowledge of geographic information systems (GIS), SQL, and Python programming, and knows how to make the most of the best tools for each assigned task, providing new solutions whenever necessary.
+                          <br><br>Without a doubt, he is a valuable asset to any company, and I am confident he has a great future ahead as a GIS technician.
+          <p style="font-style: italic;">GIS Technician at Geological Hazards Department</p>
+        </div>
+        
+      <div class="caja-2">
+         <b>ICGC</b><br><br>
+                          Arnau Solà completed 530 hours of university internships at the Cartographic and Geological Institute of Catalonia (ICGC) during the 2024–2025 academic year, within the Geological Risk and Engineering Area (AERG).<br><br>
+                          During this period, he collaborated in the organization, processing, and representation of geospatial data in the context of the natural and social environment. The work was carried out using GIS software environments such as ArcGIS Pro, QGIS, and QField, as well as PostgreSQL/PostGIS databases, with support from Python and SQL programming.<br><br>
+                          Throughout the internship, he worked on the representation of thematic data, the construction of information workflows, and the development of plugins, providing support for various tasks related to geographic information systems carried out at AERG.<br><br>
+                          During the internship, he demonstrated excellent adaptability to the team, a strong ability to learn, and a high sense of responsibility towards his work.
+          <p style="font-style: italic;">Head of the Geological Hazards Department</p>
+        </div>
+
+    </div>
   </div>
 </template>
 
@@ -29,6 +49,30 @@ export default {
 </script>
 
 <style scoped>
+
+.contenedor-padre {
+  display: flex; /* Activa el diseño en línea */
+  gap: 20px;     /* Espacio opcional entre los contenedores */
+}
+
+/* Estilos visuales para que se noten los contenedores */
+.caja-1, .caja-2 {
+  background-color: #f0f0f0;
+  padding: 20px;
+  width: 50%; /* Ocupan la mitad del espacio cada uno */
+  border-left: 6px solid rgb(224, 158, 14);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 3%;
+}
+
+.caja-1:hover {
+  transform: scale(1.01); /* Makes the div 20% bigger */
+}
+
+.caja-2:hover {
+  transform: scale(1.01); /* Makes the div 20% bigger */
+}
 
 .general {
     display: flex; 
