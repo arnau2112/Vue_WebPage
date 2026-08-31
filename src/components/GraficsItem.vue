@@ -92,7 +92,7 @@ p {
 
 .container {
   width: 50%; 
-  background-color: #ddd; 
+  background-color: rgb(230, 216, 186); 
   margin-left:20px;
   border-radius:12px;
 

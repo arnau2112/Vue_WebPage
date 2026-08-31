@@ -291,9 +291,6 @@ onMounted(()=> {
     .title {
         display: none;
     }
-    .leaflet-sidebar.collapsed {
-        display: none;
-    }
 }
 
 </style>
