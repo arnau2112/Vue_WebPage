@@ -20,6 +20,7 @@ import FreeTime from './components/FreeTime.vue'
 
 
 
+
 const app = createApp(App)
 
 app.use(router);

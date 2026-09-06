@@ -64,14 +64,17 @@ export default {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 3%;
+  border-radius: 20px;
 }
 
 .caja-1:hover {
   transform: scale(1.01); /* Makes the div 20% bigger */
+  border-left: 6px solid rgb(0, 0, 0);
 }
 
 .caja-2:hover {
   transform: scale(1.01); /* Makes the div 20% bigger */
+  border-left: 6px solid rgb(0, 0, 0);
 }
 
 .general {
