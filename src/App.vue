@@ -16,11 +16,13 @@
               $route.path !== '/login' && 
               $route.path !== '/leaflet' && 
               $route.path !== '/free_time' &&
+              $route.path !== '/spotify' &&
               $route.path !== '/api_login'">
     <error-item/>
     <api-form v-if="$route.path === '/api_login'"/>
     <leaflet-form v-if="$route.path === '/leaflet'"/>
     <free-time v-if="$route.path === '/free_time'"/>
+    <spotify-form v-if="$route.path === '/spotify'"/>
    </div>
    
   

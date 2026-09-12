@@ -29,6 +29,7 @@
                     <a v-bind:href="url3" target="_blank" style="color: black; text-decoration: none;">Bachelor's Thesis</a>
                 </button>
                 <button class="button2" @click="openPDF">Download Curriculum Vitae</button>
+                <button class="button2" @click="openSpotifyApi">Music</button>
             </p>
         </div>
         
@@ -72,6 +73,9 @@ export default {
         },
         freeTime() {
             this.$router.push('/free_time');
+        },
+        openSpotifyApi() {
+            this.$router.push('/spotify');
         },
         async fetchData() {
             const response = await fetch('https://media.licdn.com/dms/document/media/v2/D4D1FAQG3hrhAyg1o-w/feedshare-document-pdf-analyzed/B4DZoW6PQXGsAY-/0/1761320961284?e=1772064000&v=beta&t=4lpwYyoOtk_7GmnnPP8EPyL2j6Nm_3rawdpHjW3rG94');

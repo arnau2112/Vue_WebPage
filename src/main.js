@@ -15,6 +15,7 @@ import ErrorItem from './components/ErrorItem.vue'
 import ApiForm from './components/ApiForm.vue'
 import LeafletForm from './components/LeafletForm.vue'
 import FreeTime from './components/FreeTime.vue'
+import SpotifyForm from './components/SpotifyForm.vue'
 
 
 
@@ -36,5 +37,6 @@ app.component('error-item', ErrorItem)
 app.component('api-form', ApiForm)
 app.component('leaflet-form', LeafletForm)
 app.component('free-time', FreeTime)
+app.component('spotify-form', SpotifyForm)
 
 app.mount('#app')
