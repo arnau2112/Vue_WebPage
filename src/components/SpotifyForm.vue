@@ -97,12 +97,11 @@ body{
     align-items:center;
     overflow: hidden;
 }
+
 nav{
     width:60vw;
-    height:2150px;
     max-width:900px;
-    min-width:250px;
-    min-height:400px;
+    min-height: 98vh;
     background:rgba(000, 000, 000, 0.65);
     align-self:center;
     justify-self:center;
