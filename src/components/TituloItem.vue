@@ -118,7 +118,7 @@ export default {
 
 .aplicaciones {
     color:white;
-    margin-top: 200px;
+    margin-top: 65px;
     background-color:#102736de;
     display: flex;
     gap: 20px;
@@ -146,6 +146,7 @@ export default {
     padding: 30px;
     border-radius: 20px;
     margin-left: auto;
+    margin-bottom: 20px;
 
 }
 
