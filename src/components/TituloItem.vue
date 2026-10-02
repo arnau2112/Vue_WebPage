@@ -7,7 +7,20 @@
             <h2 style="font-size: 30px; margin-top: 0; margin-left: 40px;">A web page created by me with Vue.js</h2>
             <div class="engineer">Engineer in Geoinformation and Geomatics 🌍</div>
         </div>
-        
+        <div class="aplicaciones">
+            <p style="margin-left: 20px;">Python</p>
+            <p>Leaflet</p>
+            <p>Vue.js</p>
+            <p>QGIS</p>
+            <p>PostgreSQL</p>
+            <p>ArcGIS</p>
+            <p>PostGIS</p>
+            <p>Kart</p>
+            <p>GitHub</p>
+            <p>PDAL</p>
+            <p>GDAL</p>
+            <p>Django</p>
+        </div>
     </div>
     <div class="button_row">
         <button   v-on:click="click = !click">☰</button>
@@ -101,6 +114,24 @@ export default {
     margin-bottom: 20px; 
     
     
+}
+
+.aplicaciones {
+    color:white;
+    margin-top: 200px;
+    background-color:#102736de;
+    display: flex;
+    gap: 20px;
+}
+
+.aplicaciones > * {
+  flex: 1 1 0;
+}
+
+@media screen and (max-width: 500px) {
+  .aplicaciones {
+    display: none;
+  }
 }
 
 .quote {
