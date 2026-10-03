@@ -152,7 +152,7 @@ onMounted(()=> {
 
     var popupContent = `<h3 style="text-align: center;">Benvinguts al geovisor!</h3>
 		<div id="popupContent" style="text-align: center;">
-        <img src="/src/assets/mountain_images/leaflet_introduction.jpg" alt="Leaflet Introduction" style="width:230px;">
+        <img src="https://media.licdn.com/dms/image/v2/D5612AQF4cIMzUQKKxw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1676218294351?e=1792627200&v=beta&t=YXBFoPNmGupbYOb6eGeGjHfhH27VWK4kv8E0HE28GYI" alt="Leaflet Introduction" style="width:230px;">
 		<p><em>Geospatial World</em></p>
         <p>Aquí podeu veure els llocs on he estudiat i treballat, així com altres llocs d'interès. Feu clic als marcadors per obtenir més informació.</p>
         <div style="  display: flex;  text-align: center;  justify-content: center;  align-items: center;  gap: 10px;">
@@ -163,7 +163,7 @@ onMounted(()=> {
 		</div>`;
 
     var bienvenidaPopup = L.popup()
-        .setLatLng([41.38079, 2.15899])
+        .setLatLng([41.38079, 2.18000])
         .setContent(popupContent)
         .openOn(initialMap.value);
 
