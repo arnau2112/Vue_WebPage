@@ -149,6 +149,24 @@ onMounted(()=> {
         attribution: '&copy; <a href="http://www.icgc.cat/condicions">OpenStreetMap</a>'
     });
 
+
+    var popupContent = `<h3 style="text-align: center;">Benvinguts al geovisor!</h3>
+		<div id="popupContent" style="text-align: center;">
+        <img src="/src/assets/mountain_images/leaflet_introduction.jpg" alt="Leaflet Introduction" style="width:230px;">
+		<p><em>Geospatial World</em></p>
+        <p>Aquí podeu veure els llocs on he estudiat i treballat, així com altres llocs d'interès. Feu clic als marcadors per obtenir més informació.</p>
+        <div style="  display: flex;  text-align: center;  justify-content: center;  align-items: center;  gap: 10px;">
+            <p> 🟢 Treball </p>
+            <p> 🔴 Estudi </p>
+        </div>
+		
+		</div>`;
+
+    var bienvenidaPopup = L.popup()
+        .setLatLng([41.38079, 2.15899])
+        .setContent(popupContent)
+        .openOn(initialMap.value);
+
     
 
     let ColorIcon =  L.Icon.extend({
